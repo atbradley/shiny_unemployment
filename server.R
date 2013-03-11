@@ -24,7 +24,6 @@ shinyServer(function(input, output) {
     plt <- ggplot(data, aes(map_id = region)) + map_theme +
       geom_map(aes(fill = Unemployment), map = states.w) + 
       scale_fill_continuous(limits=lmts, high="#b50900", low="#fcdad9") +
-      #scale_fill_gradientn(colours=rainbow(50, start=.1/6, end=2.6/6)) +
       expand_limits(x = states.w$long, y = states.w$lat) +
       geom_path(data=states.w,
                 aes(long,lat,group=group),
